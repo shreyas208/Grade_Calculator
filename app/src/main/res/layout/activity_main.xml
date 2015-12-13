@@ -1,0 +1,97 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.shreyas208.gradecalculator.app.MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/App.EnterThree"
+            android:text="@string/main_enter_three" />
+
+        <LinearLayout
+            style="@style/App.FieldRow">
+            <TextView
+                style="@style/App.FieldRow.FieldLabel"
+                android:text="@string/main_current_grade"/>
+            <EditText
+                style="@style/App.FieldRow.ValueField"
+                android:id="@+id/etCurrentGrade"/>
+            <TextView
+                style="@style/App.FieldRow.PercentText"/>
+            <android.support.design.widget.FloatingActionButton
+                style="@style/App.FieldRow.ClearButton"
+                android:id="@+id/main_btnClearCurrentGrade"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/App.FieldRow">
+            <TextView
+                style="@style/App.FieldRow.FieldLabel"
+                android:text="@string/main_exam_grade"/>
+            <EditText
+                style="@style/App.FieldRow.ValueField"
+                android:id="@+id/etExamGrade"/>
+            <TextView
+                style="@style/App.FieldRow.PercentText"/>
+            <android.support.design.widget.FloatingActionButton
+                style="@style/App.FieldRow.ClearButton"
+                android:id="@+id/main_btnClearExamGrade"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/App.FieldRow">
+            <TextView
+                style="@style/App.FieldRow.FieldLabel"
+                android:text="@string/main_exam_value"/>
+            <EditText
+                style="@style/App.FieldRow.ValueField"
+                android:id="@+id/etExamValue"/>
+            <TextView
+                style="@style/App.FieldRow.PercentText"/>
+            <android.support.design.widget.FloatingActionButton
+                style="@style/App.FieldRow.ClearButton"
+                android:id="@+id/main_btnClearExamValue"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/App.FieldRow">
+            <TextView
+                style="@style/App.FieldRow.FieldLabel"
+                android:text="@string/main_final_grade"/>
+            <EditText
+                style="@style/App.FieldRow.ValueField"
+                android:id="@+id/etFinalGrade"/>
+            <TextView
+                style="@style/App.FieldRow.PercentText"/>
+            <android.support.design.widget.FloatingActionButton
+                style="@style/App.FieldRow.ClearButton"
+                android:id="@+id/main_btnClearFinalGrade"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/App.ButtonRow">
+            <Button
+                style="@style/App.ButtonRow.Button.Calculate"
+                android:theme="@style/App.ButtonRow.Button.Calculate"
+                android:id="@+id/main_btnCalculate"
+                android:text="@string/main_button_calculate"/>
+            <Button
+                style="@style/App.ButtonRow.Button.ClearAll"
+                android:theme="@style/App.ButtonRow.Button.ClearAll"
+                android:id="@+id/main_btnClearAll"
+                android:text="@string/main_button_clear_all"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

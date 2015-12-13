@@ -1,0 +1,94 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="App" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/appcolor</item>
+        <item name="colorPrimaryDark">@color/appcolor</item>
+        <item name="colorAccent">@color/appcolor</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="App.EnterThree">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="App.FieldRow">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginTop">7dp</item>
+        <item name="android:layout_marginBottom">7dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="App.FieldRow.FieldLabel">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">140dp</item>
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+    <style name="App.FieldRow.ValueField" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="App.FieldRow.PercentText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:text">%</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="App.FieldRow.ClearButton" parent="Widget.AppCompat.Button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:src">@drawable/ic_clear_white_24dp</item>
+        <item name="android:onClick">mainOnButtonClick</item>
+        <item name="backgroundTint">@color/lightred</item>
+        <item name="fabSize">mini</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="App.ButtonRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="App.ButtonRow.Button" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">14dp</item>
+        <item name="android:onClick">mainOnButtonClick</item>
+    </style>
+    <style name="App.ButtonRow.Button.Calculate" parent="App.ButtonRow.Button">
+        <item name="backgroundTint">@color/appcolor</item>
+        <item name="colorButtonNormal">@color/appcolor</item>
+        <item name="android:layout_weight">70</item>
+        <item name="android:layout_marginRight">6dp</item>
+    </style>
+    <style name="App.ButtonRow.Button.ClearAll" parent="App.ButtonRow.Button">
+        <item name="backgroundTint">@color/lightred</item>
+
+        <item name="colorButtonNormal">@color/lightred</item>
+        <item name="android:layout_weight">30</item>
+        <item name="android:layout_marginLeft">6dp</item>
+    </style>
+
+    <style name="App.AboutTextField">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

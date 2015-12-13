@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Grade Calculator</string>
+
+    <string name="action_about">About</string>
+
+    <string name="title_activity_about">Grade Calculator</string>
+
+    <string name="about_version">Version 1.6 (2015&#8211;12&#8211;11)</string>
+    <string name="about_email">gradecalc@shreyas208.com</string>
+    <string name="about_copyright">© Shreyas Patil</string>
+
+    <string name="main_enter_three">ENTER ANY THREE</string>
+    <string name="main_current_grade">Current Grade</string>
+    <string name="main_exam_grade">Exam Grade</string>
+    <string name="main_exam_value">Exam Value</string>
+    <string name="main_final_grade">Final Value</string>
+    <string name="main_button_calculate">CALCULATE</string>
+    <string name="main_button_clear_all">CLEAR</string>
+
+    <string name="toast_enter_three">Enter exactly 3 values</string>
+</resources>
