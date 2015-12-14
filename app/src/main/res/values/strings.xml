@@ -14,7 +14,7 @@
     <string name="main_current_grade">Current Grade</string>
     <string name="main_exam_grade">Exam Grade</string>
     <string name="main_exam_value">Exam Value</string>
-    <string name="main_final_grade">Final Value</string>
+    <string name="main_final_grade">Final Grade</string>
     <string name="main_button_calculate">CALCULATE</string>
     <string name="main_button_clear_all">CLEAR</string>
 
