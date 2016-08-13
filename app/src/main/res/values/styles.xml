@@ -80,7 +80,6 @@
     </style>
     <style name="App.ButtonRow.Button.ClearAll" parent="App.ButtonRow.Button">
         <item name="backgroundTint">@color/lightred</item>
-
         <item name="colorButtonNormal">@color/lightred</item>
         <item name="android:layout_weight">30</item>
         <item name="android:layout_marginLeft">6dp</item>

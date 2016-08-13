@@ -41,41 +41,36 @@ public class MainActivity extends AppCompatActivity {
     private void calculate() {
         updateStrings();
         if (strCurrentGrade.isEmpty()) {
-            if (strExamGrade.isEmpty() || strExamValue.isEmpty() || strFinalGrade.isEmpty()) notifyEnterThree();
-            else {
-                examGrade = Double.parseDouble(etExamGrade.getText().toString());
-                examValue = Double.parseDouble(etExamValue.getText().toString());
-                finalGrade = Double.parseDouble(etFinalGrade.getText().toString());
-                currentGrade = ((finalGrade - (examGrade * examValue)) / (1 - examValue));
-                etCurrentGrade.setText(String.valueOf((Math.round(currentGrade * 100))/100.0));
+            if (strExamGrade.isEmpty() || strExamValue.isEmpty() || strFinalGrade.isEmpty()) {
+                notifyEnterThree();
+            } else {
+                updateDoubles(etCurrentGrade);
+                currentGrade = (finalGrade - (examGrade * examValue)) / (1 - examValue);
+                etCurrentGrade.setText(getRoundedStringFromValue(currentGrade));
                 lastCalculated = etCurrentGrade;
             }
         } else if (strExamGrade.isEmpty()) {
-            if (strExamValue.isEmpty() || strFinalGrade.isEmpty()) notifyEnterThree();
-            else {
-                currentGrade = Double.parseDouble(etCurrentGrade.getText().toString());
-                examValue = Double.parseDouble(etExamValue.getText().toString()) / 100;
-                finalGrade = Double.parseDouble(etFinalGrade.getText().toString());
+            if (strExamValue.isEmpty() || strFinalGrade.isEmpty()) {
+                notifyEnterThree();
+            } else {
+                updateDoubles(etCurrentGrade);
                 examGrade = (finalGrade - (currentGrade * (1 - examValue))) / examValue;
-                etExamGrade.setText(String.valueOf((Math.round(examGrade * 100))/100.0));
+                etExamGrade.setText(getRoundedStringFromValue(examGrade));
                 lastCalculated = etExamGrade;
             }
         } else if (strExamValue.isEmpty()) {
-            if (strFinalGrade.isEmpty()) notifyEnterThree();
-            else {
-                examGrade = Double.parseDouble(etExamGrade.getText().toString());
-                finalGrade = Double.parseDouble(etFinalGrade.getText().toString());
-                currentGrade = Double.parseDouble(etCurrentGrade.getText().toString());
+            if (strFinalGrade.isEmpty()) {
+                notifyEnterThree();
+            } else {
+                updateDoubles(etExamValue);
                 examValue = 100.0 * (finalGrade - currentGrade) / (examGrade - currentGrade);
-                etExamValue.setText(String.valueOf((Math.round(examValue * 100))/100.0));
+                etExamValue.setText(getRoundedStringFromValue(examValue));
                 lastCalculated = etExamValue;
             }
         } else if (strFinalGrade.isEmpty()) {
-            currentGrade = Double.parseDouble(etCurrentGrade.getText().toString());
-            examGrade = Double.parseDouble(etExamGrade.getText().toString());
-            examValue = Double.parseDouble(etExamValue.getText().toString()) / 100;
+            updateDoubles(etFinalGrade);
             finalGrade = (currentGrade * (1 - examValue)) + (examGrade * examValue);
-            etFinalGrade.setText(String.valueOf((Math.round(finalGrade * 100))/100.0));
+            etFinalGrade.setText(getRoundedStringFromValue(finalGrade));
             lastCalculated = etFinalGrade;
         } else {
             lastCalculated.setText("");
@@ -90,22 +85,33 @@ public class MainActivity extends AppCompatActivity {
         strFinalGrade = etFinalGrade.getText().toString();
     }
 
+    private void updateDoubles(EditText except) {
+        if (except != etCurrentGrade) currentGrade = Double.parseDouble(etCurrentGrade.getText().toString());
+        if (except != etExamGrade) examGrade = Double.parseDouble(etExamGrade.getText().toString());
+        if (except != etExamValue) examValue = Double.parseDouble(etExamValue.getText().toString()) / 100;
+        if (except != etFinalGrade) finalGrade = Double.parseDouble(etFinalGrade.getText().toString());
+    }
+
     private void notifyEnterThree() {
         Toast.makeText(getApplicationContext(), getString(R.string.toast_enter_three), Toast.LENGTH_SHORT).show();
     }
 
-    private void clearAll() {
+    private void clearAllFields() {
         etCurrentGrade.setText("");
         etExamGrade.setText("");
         etExamValue.setText("");
         etFinalGrade.setText("");
     }
 
+    private String getRoundedStringFromValue(double value) {
+        return String.valueOf(Math.round(value * 100)/100.0);
+    }
+
     public void mainOnButtonClick(View view) {
         if (view.getId() == R.id.main_btnCalculate) {
             calculate();
         } else if (view.getId() == R.id.main_btnClearAll) {
-            clearAll();
+            clearAllFields();
         } else if (view.getId() == R.id.main_btnClearCurrentGrade) {
             etCurrentGrade.setText("");
         } else if (view.getId() == R.id.main_btnClearExamGrade) {
